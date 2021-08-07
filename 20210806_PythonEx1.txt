@@ -1,0 +1,13 @@
+10 bộ phim yêu thích
+2021/08/06
+Trần Thu Hằng
+1.The Shawshank Redemption(1994)
+2.The Dark Knight(2008)
+3.Schindler's List(1993)
+4.The Lord of the Rings
+5.Inception(2010)
+6.Matrix
+7.Avatar
+8.Léon(1994)
+9.WALL·E(2008)
+10.Intouchables(2011)
