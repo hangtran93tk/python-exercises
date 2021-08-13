@@ -1,6 +1,6 @@
 #print("Mun","Kotori","Bunsetsu","Em", sep="\n")
 # str1 = "Toi ten la {}. Toi sinh nam {}. Toi den tu {}. Nhiet do bh la {:.2f}"
-# str2 ="Hom nay ngay {:02d} \n thang {:02d} \t\t\t nam {}" #t = tab
+# str2 ="Hom nay ngay {:02d} \n thang {:02d} \t\t\t nam {}" #t = tab , n = newline
 #
 # name = "Hang"
 # year1 = 1993
@@ -24,7 +24,15 @@
 # print(str[:4])
 # print(str[4:])
 
-num1 = int(input("input num1 : "))
-num2 = int(input("input num2 : "))
+# num1 = int(input("input num1 : "))
+# num2 = int(input("input num2 : "))
+#
+# print("Sum is : {}".format(num1 + num2 ))
 
-print("Sum is : {}".format(num1 + num2 ))
+
+string = "        Mun 1102          "
+print(string.strip())
+print(string.split())
+print(string.rstrip())
+print(string.rsplit())
+
