@@ -6,10 +6,12 @@ try:
     while True:
         webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=1")
         time.sleep(10)
-        os.system("taskkill /im chrome.exe /f")
+        # os.system("taskkill /im chrome.exe /f")
+        os.system("builtin kill %1")
         webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=2")
         time.sleep(10)
-        os.system("taskkill /im chrome.exe /f")
+        # os.system("taskkill /im chrome.exe /f")
+        os.system("builtin kill %1")
 except KeyboardInterrupt as e:
     sys.exit()
 
