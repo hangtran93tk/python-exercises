@@ -1,26 +1,18 @@
 import webbrowser
 import time
-import  sys
-import  os
+import sys
+import os
+
 try:
     while True:
         webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=1")
         time.sleep(10)
-<<<<<<< HEAD
-        #os.system("taskkill /im chrome.exe /f")
-	os.system("builtin kill %1")
-        webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=2")
-        time.sleep(10)
-        #os.system("taskkill /im chrome.exe /f")
-	os.system("builtin kill %1")	
-=======
-        # os.system("taskkill /im chrome.exe /f")
+        # 　os.system("taskkill /im chrome.exe /f")
         os.system("builtin kill %1")
         webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=2")
         time.sleep(10)
-        # os.system("taskkill /im chrome.exe /f")
+        # 　os.system("taskkill /im chrome.exe /f")
         os.system("builtin kill %1")
->>>>>>> 9bed1b6eb6374f6b17ae1d24634a0c5fb5bd5b67
 except KeyboardInterrupt as e:
     sys.exit()
 
