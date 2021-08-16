@@ -2,7 +2,7 @@ import turtle
 import PartOfHouse as p
 
 t = turtle.Turtle()
-
+corner = 90
 # for background
 screen = turtle.Screen()
 screen.bgcolor("yellow")
@@ -29,31 +29,31 @@ t.end_fill()
 
 # for door and
 # windows
-t.right(90)
+t.right(corner)
 t.forward(400)
 
-t.left(90)
+t.left(corner)
 t.forward(50)
 
-t.left(90)
+t.left(corner)
 t.forward(150)
 
-t.right(90)
+t.right(corner)
 t.forward(200)
 
 t.right(180)
 t.forward(200)
 p.part3(t)
 
-t.right(90)
+t.right(corner)
 t.forward(100)
-t.right(90)
+t.right(corner)
 t.forward(150)
-t.right(90)
+t.right(corner)
 t.forward(100)
-t.right(90)
+t.right(corner)
 t.forward(75)
-t.right(90)
+t.right(corner)
 t.forward(200)
 t.right(180)
 t.forward(200)
