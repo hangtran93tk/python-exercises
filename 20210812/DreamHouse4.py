@@ -17,33 +17,29 @@ t.speed(10)
 # the house
 t.fillcolor('cyan')
 t.begin_fill()
-p.part1(t)
+p.part1(t,corner)
 t.end_fill()
 
 # for top of
 # the house
 t.fillcolor('brown')
 t.begin_fill()
-p.part2(t)
+p.part2(t, corner)
 t.end_fill()
 
 # for door and
 # windows
 t.right(corner)
 t.forward(400)
-
 t.left(corner)
 t.forward(50)
-
 t.left(corner)
 t.forward(150)
-
 t.right(corner)
 t.forward(200)
-
 t.right(180)
 t.forward(200)
-p.part3(t)
+p.part3(t,corner)
 
 t.right(corner)
 t.forward(100)
@@ -57,6 +53,6 @@ t.right(corner)
 t.forward(200)
 t.right(180)
 t.forward(200)
-p.part4(t)
+p.part4(t,corner)
 
 turtle.done()
