@@ -1,10 +1,14 @@
 import turtle
 import  turtle as t
-num = 10
+num = int(input("Nhập vào khoảng cách tùy ý (Bội của 10) : "))
+size = 10
 corner1 = 180
 
-for i in range(20):
-    t.circle(num, corner1)
-    num += 10
+while True:
+    if size <= num:
+        t.circle(size, corner1)
+        size += 10
+    else:
+        break
 
 turtle.done()
