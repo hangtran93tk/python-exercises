@@ -5,12 +5,12 @@ import os
 
 try:
     while True:
-        webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=1")
-        time.sleep(10)
+        webbrowser.open("https://www.youtube.com/watch?v=G5MyiQQCmPA&t=12s")
+        time.sleep(300)
         os.system("taskkill /im chrome.exe /f")
         # os.system("pkill -f 'PATTERN'")
-        webbrowser.open("https://m.youtube.com/watch?v=G5MyiQQCmPA&list=PLIEkkiNDdc--WAuWctsnPJL00PnBnBOIc&index=2")
-        time.sleep(10)
+        webbrowser.open("https://www.youtube.com/watch?v=v_pnqbfAoYw&t=9s")
+        time.sleep(300)
         os.system("taskkill /im chrome.exe /f")
         # os.system("pkill -f 'PATTERN'")
 except KeyboardInterrupt as e:
