@@ -3,7 +3,7 @@ import  turtle as t
 colors = ["pink","blue","green","yellow","orange", "red"]
 turn = 0
 loop = 0
-t.speed(100)
+t.speed(20)
 while loop < 6:
     for i in range(6):
         t.color(colors[i])
