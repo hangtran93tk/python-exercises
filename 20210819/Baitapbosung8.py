@@ -1,17 +1,7 @@
-inputErrorMsg = "Hay nhap so tu nhien lon hon 0"
+import SomeModule as m
 
-def nhapSo(sideName):
-    while True:
-        num = input(f"Nhap {sideName} : ")
-        if num.isdigit():
-            break
-        else:
-            print(inputErrorMsg)
-
-    return num
-
-chieudai = int(nhapSo("chieu dai"))
-chieurong = int(nhapSo("chieu rong"))
+chieudai = int(m.nhapSo("chieu dai"))
+chieurong = int(m.nhapSo("chieu rong"))
 char = "*"
 for i in range(1,chieurong + 1):
     print_str = ''
