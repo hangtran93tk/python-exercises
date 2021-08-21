@@ -18,11 +18,18 @@
 #   for y in  range(1,6):
 #     print(x,y)
 
-a = int(input("Nhap vao so nguyen a: "))
-b = int(input("Nhap vao so nguyen b: "))
-sum = 0
-
-for i in  range (a, b + 1):
-    sum += i
-
-print(f"Tong tu {a} toi {b} la {sum}")
+# a = int(input("Nhap vao so nguyen a: "))
+# b = int(input("Nhap vao so nguyen b: "))
+# sum = 0
+#
+# for i in  range (a, b + 1):
+#     sum += i
+#
+# print(f"Tong tu {a} toi {b} la {sum}")
+for i in range(10):
+    if i == 5:
+        break
+    else:
+        print(i)
+else:
+    print("Here")
