@@ -1,6 +1,6 @@
-import  SomeModule as modul
+import SomeModule as module
 
-chuoi = modul.nhapChuoi("chuoi bat ky")
+chuoi = module.nhapChuoi("chuoi bat ky")
 tail = len(chuoi) - 1
 
 for i in range(len(chuoi)//2):
@@ -10,4 +10,3 @@ for i in range(len(chuoi)//2):
     tail -= 1
 else:
     print(f"{chuoi} la chuoi doi xung")
-
