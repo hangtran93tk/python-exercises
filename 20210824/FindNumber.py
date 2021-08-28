@@ -11,3 +11,4 @@ for i in range(len((str(addNum)))):
     count = str(lastNum).find(str(addNum)[i])
 
 
+
