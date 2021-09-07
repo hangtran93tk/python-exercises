@@ -1,11 +1,11 @@
-import  SomeModules as m
+import SomeModules as m
 import pandas as pd
 
 student_list = []
 
 def show_title():
     info = "{:18} {:18} {:18} {:18} {:18} {:18}"
-    print(info.format("Mã số", "Họ tên", "giới tính", "tỉnh/thành phố", "điểm thi lý thuyết", "điểm thi thực hành"))
+    print(info.format("Mã số", "Họ tên", "Giới tính", "Tỉnh/thành phố", "Điểm thi lý thuyết", "Điểm thi thực hành"))
 
 def add_student():
     path = input("Nhap path cua file excel (Ex: C:\\Users\\..) : ")
@@ -17,7 +17,18 @@ def add_student():
     print("Thêm danh sách học sinh thành công")
 
 def edit_student():
-    pass
+    student_id = m.nhapChuoi("Nhập mã số học sinh")
+    del_index = find_index(student_id)
+    while True:
+        if del_index is None:
+            print("Mã số học sinh không chính xác. Vui lòng nhập lại ! ")
+            student_id = m.nhapChuoi("Nhập mã số học sinh: ")
+            del_index = find_index(student_id)
+        else:
+            break
+    print(student_list[del_index])
+
+
 
 def show_student_list():
     show_title()
@@ -34,6 +45,7 @@ def get_average_score(*num):
     return total // len(num)
 
 def show_passed_students():
+    print("Danh sách học viên thi đỗ")
     show_title()
     for i in range (len(student_list)):
         average = get_average_score(student_list[i][4],student_list[i][5])
@@ -44,6 +56,7 @@ def show_passed_students():
             print("\n")
 
 def show_failed_students():
+    print("Danh sách học viên thi trượt")
     show_title()
     for i in range (len(student_list)):
         average = get_average_score(student_list[i][4],student_list[i][5])
@@ -54,14 +67,26 @@ def show_failed_students():
             print("\n")
 
 def  remove_student():
-    student_id = m.nhapChuoi("Nhập mã số học sinh: ")
+    student_id = m.nhapChuoi("Nhập mã số học sinh")
+    del_index = find_index(student_id)
+    while True:
+        if del_index is None:
+            print("Mã số học sinh không chính xác. Vui lòng nhập lại ! ")
+            student_id = m.nhapChuoi("Nhập mã số học sinh: ")
+            del_index = find_index(student_id)
+        else:
+            break
+    del_confirm = m.nhapChuoi(f"Bạn có chắc chắn muốn xóa học sinh số {student_id} không ? Y/N : ")
+    if del_confirm == "Y":
+        del student_list[del_index]
+        print(f"Đã xóa học sinh số {student_id}")
+def find_index(student_id):
+    del_index = None
     for i in range(len(student_list)):
         if student_id == student_list[i][0]:
-            print(student_list[i][0])
-            continue
-        del student_list[i]
-    print(f"Đã xóa học sinh số {student_id}")
-
+            del_index = i
+            break
+    return del_index
 def show_menu():
     print('''
 Hãy chọn tính năng muốn thực hiện:
@@ -83,6 +108,7 @@ while True:
     user_choice = get_choice()
     print(f"Bạn đã chọn {user_choice}")
     if user_choice == "7":
+        print("Kết thúc chương trình")
         break
     elif user_choice == "1":
         add_student()
