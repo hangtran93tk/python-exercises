@@ -18,17 +18,32 @@ def add_student():
 
 def edit_student():
     student_id = m.nhapChuoi("Nhập mã số học sinh")
-    del_index = find_index(student_id)
+    index = find_index(student_id)
     while True:
-        if del_index is None:
+        if index is None:
             print("Mã số học sinh không chính xác. Vui lòng nhập lại ! ")
             student_id = m.nhapChuoi("Nhập mã số học sinh: ")
-            del_index = find_index(student_id)
+            index = find_index(student_id)
         else:
             break
-    print(student_list[del_index])
 
+    #Display student info you want edit
+    for i in range(len(student_list[index])):
+        info = "{:18}"
+        print(info.format(student_list[index][i]), end=" ")
+    print("\n")
 
+    student_list[index][1] = m.nhapChuoi("Họ tên")
+    student_list[index][2] = m.nhapChuoi("Giới tính")
+    student_list[index][3] = m.nhapChuoi("Tỉnh/thành phố")
+    student_list[index][4] = m.nhapSo("Điểm thi lý thuyết")
+    student_list[index][5] = m.nhapSo("Điểm thi thực hành")
+    print("Thay đổi thông tin học sinh hoàn thành.")
+
+    for i in range(len(student_list[index])):
+        info = "{:18}"
+        print(info.format(student_list[index][i]), end=" ")
+    print("\n")
 
 def show_student_list():
     show_title()
