@@ -1,9 +1,9 @@
 # Nhap so tu ban phim
 
 def nhapSo(sideName):
-    inputErrorMsg = "Hay nhap so tu nhien lon hon 0"
+    inputErrorMsg = "Hãy nhập số tự nhiên lớn hơn 0"
     while True:
-        num: str = input(f"Nhap {sideName} : ")
+        num: str = input(f"Nhập {sideName} : ")
         if num.isdigit():
             break
         else:
@@ -14,9 +14,9 @@ def nhapSo(sideName):
 
 def nhapChuoi(tenChuoi):
     while True:
-        chuoi = input(f"Nhap {tenChuoi}: ")
+        chuoi = input(f"Nhập {tenChuoi}: ")
         if len(chuoi) < 1 or len(chuoi) > 1000:
-            print("Do dai chuoi phai lon hon 1 hoac nho hon 1000")
+            print("Độ dài chuỗi phải lớn hơn 1 hoặc nhỏ hơn 1000")
         else:
             break
 

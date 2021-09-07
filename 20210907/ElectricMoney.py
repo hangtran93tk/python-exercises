@@ -25,6 +25,7 @@ print("Số tiền phải trả sẽ được tính như sau: ")
 total_price = cal_money(luongDienTieuThu)
 tax = tax(total_price)
 total_price_with_tax = int(total_price * 1.1)
+
 print(f"Tiền điện trước thuế: {total_price}")
 print(f"Tiền thuế (10%) : {tax}")
 print(f"Tiền điện sau thuế : {total_price_with_tax}")

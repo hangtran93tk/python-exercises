@@ -8,26 +8,34 @@ def show_title():
     print(info.format("Mã số", "Họ tên", "Giới tính", "Tỉnh/thành phố", "Điểm thi lý thuyết", "Điểm thi thực hành"))
 
 def add_student():
-    path = input("Nhap path cua file excel (Ex: C:\\Users\\..) : ")
-    # df = pd.read_excel('C:\\Users\\81805\\Downloads\\Students.xlsx', engine="openpyxl")
-    df = pd.read_excel(f'{path}', engine="openpyxl")
-    dn = df.to_numpy()
-    for i in range(len(dn)):
-        student_list.append(dn[i])
-    print("Thêm danh sách học sinh thành công")
+    while True:
+        try:
+            path = input("Nhập path của file excel chú ý dấu \\ (Ex: C:\\Users\\..) : ")
+            # df = pd.read_excel('C:\\Users\\81805\\Downloads\\Students.xlsx', engine="openpyxl")
+            df = pd.read_excel(f'{path}', engine="openpyxl")
+            dn = df.to_numpy()
+            for i in range(len(dn)):
+                student_list.append(dn[i])
+            print("Thêm danh sách học sinh thành công")
+            break
+        except:
+            print("Path bạn nhập vào không chính xác !")
+
 
 def edit_student():
     student_id = m.nhapChuoi("Nhập mã số học sinh")
+
     index = find_index(student_id)
     while True:
         if index is None:
             print("Mã số học sinh không chính xác. Vui lòng nhập lại ! ")
-            student_id = m.nhapChuoi("Nhập mã số học sinh: ")
+            student_id = m.nhapChuoi("Nhập mã số học sinh")
             index = find_index(student_id)
         else:
             break
 
     #Display student info you want edit
+    show_title()
     for i in range(len(student_list[index])):
         info = "{:18}"
         print(info.format(student_list[index][i]), end=" ")
@@ -39,7 +47,7 @@ def edit_student():
     student_list[index][4] = m.nhapSo("Điểm thi lý thuyết")
     student_list[index][5] = m.nhapSo("Điểm thi thực hành")
     print("Thay đổi thông tin học sinh hoàn thành.")
-    print("")
+    show_title()
     for i in range(len(student_list[index])):
         info = "{:18}"
         print(info.format(student_list[index][i]), end=" ")
@@ -87,14 +95,16 @@ def  remove_student():
     while True:
         if del_index is None:
             print("Mã số học sinh không chính xác. Vui lòng nhập lại ! ")
-            student_id = m.nhapChuoi("Nhập mã số học sinh: ")
+            student_id = m.nhapChuoi("Nhập mã số học sinh")
             del_index = find_index(student_id)
         else:
             break
-    del_confirm = m.nhapChuoi(f"Bạn có chắc chắn muốn xóa học sinh số {student_id} không ? Y/N : ")
+    del_confirm = m.nhapChuoi(f"Bạn có chắc chắn muốn xóa học sinh số {student_id} không ? Y/N ")
     if del_confirm == "Y":
         del student_list[del_index]
         print(f"Đã xóa học sinh số {student_id}")
+    else:
+        print(f"Thông tin của học sinh số {student_id} không bị xóa")
 def find_index(student_id):
     del_index = None
     for i in range(len(student_list)):
