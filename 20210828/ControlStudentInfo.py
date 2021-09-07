@@ -39,7 +39,7 @@ def edit_student():
     student_list[index][4] = m.nhapSo("Điểm thi lý thuyết")
     student_list[index][5] = m.nhapSo("Điểm thi thực hành")
     print("Thay đổi thông tin học sinh hoàn thành.")
-
+    print("")
     for i in range(len(student_list[index])):
         info = "{:18}"
         print(info.format(student_list[index][i]), end=" ")
