@@ -45,19 +45,21 @@ def draw_oval(t, number):
             t.circle(50, 90)
         t.right(360 // number)
 
-def draw_heart(t, number, color):
-    for i in range(4):
-        draw_circle(t,50,1)
-        t.circle(50,135)
-        t.left(90)
-        draw_circle(t, 50, 1)
-        draw_square(t,100,1)
 
-        t.left(45)
-        t.forward(140)
-        t.left(90)
-        t.forward(100)
-        t.right(90)
+def curve(t):
+    for i in range(200):
+        t.right(1)
+        t.forward(1)
+
+def draw_heart(t, number,color):
+    for i in range(number):
+        t.left(140)
+        t.forward(113)
+        curve(t)
+        t.left(120)
+        curve(t)
+        t.forward(112)
+        t.left(360 // number)
 
 def show_menu():
     print('''
@@ -101,39 +103,37 @@ def get_information():
     return number,color
 
 #main program
-try:
-    t.speed(20)
+
+t.speed(20)
+show_menu()
+while True:
     show_menu()
-    while True:
-        show_menu()
-        user_pick = get_pick()
-        t.clear()
-        if user_pick == "8":
-            print("Kết thúc chương trình")
-            break
-        else:
-            number, color = get_information()
-            t.pencolor(color)
-            if user_pick == "1":
-                radius = int(module.nhapSo("Nhập bán kính"))
-                draw_circle(t, radius, number)
-            elif user_pick == "2":
-                width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
-                draw_square(t, width, number)
-            elif user_pick == "3":
-                width = int(module.nhapSo("Nhập chiều dài"))
-                height = int(module.nhapSo("Nhập chiều rộng"))
-                draw_rectangle(t, width, height, number)
-            elif user_pick == "4":
-                width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
-                draw_pentagon(t, width, number)
-            elif user_pick == "5":
-                width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
-                draw_equilateral_triangle(t, width, number)
-            elif user_pick == "6":
-                draw_oval(t, number)
-            elif user_pick == "7":
-                draw_heart(t, number, color)
-except:
-    print("Bạn đã đóng cửa sổ vẽ con rùa =.= ")
-    sys.exit()
+    user_pick = get_pick()
+    t.clear()
+    if user_pick == "8":
+        print("Kết thúc chương trình")
+        break
+    else:
+        number, color = get_information()
+        t.pencolor(color)
+        if user_pick == "1":
+            radius = int(module.nhapSo("Nhập bán kính"))
+            draw_circle(t, radius, number)
+        elif user_pick == "2":
+            width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
+            draw_square(t, width, number)
+        elif user_pick == "3":
+            width = int(module.nhapSo("Nhập chiều dài"))
+            height = int(module.nhapSo("Nhập chiều rộng"))
+            draw_rectangle(t, width, height, number)
+        elif user_pick == "4":
+            width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
+            draw_pentagon(t, width, number)
+        elif user_pick == "5":
+            width = int(module.nhapSo("Nhập chiều dài 1 cạnh"))
+            draw_equilateral_triangle(t, width, number)
+        elif user_pick == "6":
+            draw_oval(t, number)
+        elif user_pick == "7":
+            draw_heart(t, number, color)
+
