@@ -57,7 +57,7 @@ def show_student_list():
     show_title()
     info = "{:18}"
     for i in range(len(student_list)):
-        for j in  range(len(student_list[i])):
+        for j in range(len(student_list[i])):
             print(info.format(student_list[i][j]), end=" ")
         print("\n")
 
