@@ -56,7 +56,6 @@ def random_walk(time, turtles):
             run = False
             print("DEBUG2: ",time.time())
 
-
 run = True
 while run:
     random_walk(time,all_turtles)
