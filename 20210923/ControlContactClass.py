@@ -12,3 +12,4 @@ hang.phones = "Who care"
 hang.set_field("name", "Tran")
 print(hang.get_info())
 print(hang.check_tag("ban be"))
+print(hang.__str__())

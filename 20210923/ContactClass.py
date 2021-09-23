@@ -10,6 +10,9 @@ class Contact:
     def set_field(self,key, value):
         # self.__dict__[key] = value
         self.__setattr__(key,value)
+
+    def __str__(self):
+        return self.get_info()
     # def set_name(self, name):
     #     self.name = name
     #
