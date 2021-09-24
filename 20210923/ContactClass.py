@@ -12,31 +12,16 @@ class Contact:
         self.__setattr__(key,value)
 
     def __str__(self):
-        return self.get_info()
-    # def set_name(self, name):
-    #     self.name = name
-    #
-    # def set_phone(self,phones):
-    #     self.phones = phones
-    #
-    # def set_emails(self,emails):
-    #     self.emails = emails
-    #
-    # def set_address(self, address):
-    #     self.address = address
-    #
-    # def set_tags(self,tags):
-    #     self.tags = tags
+        return f'{self.__name}\n{self.phones}\n{self.emails}\n{self.address}\n{self.note}\n{self.tags}'
 
-    def get_info(self):
-        return f"""
-        {"Name   : ":10}{self.name}
-        {"Phone  : ":10}{self.phones}
-        {"Email  : ":10}{self.emails}
-        {"Address:":10}{self.address}
-        {"Note   : ":10}{self.note}
-        {"Tags   :":10}{self.tags}
-        """
+    def set_phone(self,phones):
+        #Check phone value
+        self.phones = phones
+
+    def set_emails(self,emails):
+        #Check email value
+        self.emails = emails
+
     def check_tag(self,tag):
         return tag in self.tags
 
@@ -44,3 +29,8 @@ class Contact:
         if (field in Contact):
             self.field = new_value
 
+    def is_friend(self):
+        return "ban be" in self.tags
+
+    def say_hello(self):
+        print("Hello, I'm " + self.__name)
